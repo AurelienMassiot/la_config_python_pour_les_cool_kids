@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "la-config-python-pour-les-cool-kids"
+version = "0.1.0"
+description = ""
+authors = ["Aurelien Massiot <aurelien.massiot@octo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic-settings = "^2.5.2"
+pandas = "^2.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
