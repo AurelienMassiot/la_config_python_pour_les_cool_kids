@@ -1,12 +1,14 @@
 import pandas as pd
 
-from config import Settings
-settings = Settings()
+from config import DatabaseSettings, PathsSettings
+database_settings = DatabaseSettings()
+paths_settings = PathsSettings()
 
-df = pd.read_csv(settings.RAW_DATA_DIR / 'client.csv')
+df = pd.read_csv(paths_settings.RAW_DATA_DIR / 'client.csv')
 
 if __name__ == '__main__':
-    print(f'PG HOST: {settings.PG_HOST}')
-    print(f'PG PORT: {settings.PG_PORT}')
-    print(f'RAW_DATA_DIR: {settings.RAW_DATA_DIR}')
+    print(f'PG HOST: {database_settings.PG_HOST}')
+    print(f'PG PORT: {database_settings.PG_PORT}')
+    print(f'PG PASSWORD: {database_settings.PG_PASSWORD}')
+    print(f'RAW_DATA_DIR: {paths_settings.RAW_DATA_DIR}')
     print(f'df: {df}')
