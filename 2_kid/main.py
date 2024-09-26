@@ -12,3 +12,4 @@ if __name__ == '__main__':
     print(f'PG HOST: {pg_host}')
     print(f'PG PORT: {pg_port}')
     print(f'df: {df}')
+

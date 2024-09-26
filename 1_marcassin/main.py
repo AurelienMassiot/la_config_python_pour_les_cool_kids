@@ -1,8 +1,4 @@
-import os
-from dotenv import load_dotenv
 import pandas as pd
-
-load_dotenv()
 
 pg_host = 'pghost'
 pg_port = 'pgport'

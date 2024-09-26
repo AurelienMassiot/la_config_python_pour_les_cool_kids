@@ -1,0 +1,1 @@
+ma_variable_globale = "Ceci est une variable globale"
