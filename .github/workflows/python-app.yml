@@ -35,4 +35,4 @@ jobs:
 
       - name: Run main.py
         run: |
-          poetry run python 4_ultimate_cool_kid/main.py
+          poetry run python 4_ultimate_cool_kid_pour_deploiement/main.py
