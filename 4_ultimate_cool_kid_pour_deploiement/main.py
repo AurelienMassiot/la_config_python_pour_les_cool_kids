@@ -4,7 +4,7 @@ from config import DatabaseSettings, PathsSettings
 database_settings = DatabaseSettings()
 paths_settings = PathsSettings()
 
-df = pd.read_csv(paths_settings.RAW_DATA_DIR / 'client.csv')
+#df = pd.read_csv(paths_settings.RAW_DATA_DIR / 'client.csv')
 
 if __name__ == '__main__':
     print(f'PG HOST: {database_settings.PG_HOST}')
@@ -14,4 +14,4 @@ if __name__ == '__main__':
     print(f'PG DSN: {database_settings.PG_DSN}')
     print(f'VARVAR: {database_settings.VARVAR}')
     print(f'RAW_DATA_DIR: {paths_settings.RAW_DATA_DIR}')
-    print(f'df: {df}')
+    #print(f'df: {df}')
