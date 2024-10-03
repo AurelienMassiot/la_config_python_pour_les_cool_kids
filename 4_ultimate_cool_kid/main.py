@@ -2,6 +2,7 @@ import pandas as pd
 
 from config import DatabaseSettings, PathsSettings
 database_settings = DatabaseSettings()
+# database_settings = DatabaseSettings(_env_file='.env.dev')
 paths_settings = PathsSettings()
 
 df = pd.read_csv(paths_settings.RAW_DATA_DIR / 'client.csv')

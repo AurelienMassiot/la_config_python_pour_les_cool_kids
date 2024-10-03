@@ -4,7 +4,7 @@ from pathlib import Path
 
 import boto3
 from botocore.exceptions import ClientError
-from pydantic import SecretStr, PostgresDsn
+from pydantic import PostgresDsn
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 secret_name = "AUMA_TEST"
@@ -31,16 +31,18 @@ def get_secret():
     return json.loads(secret)
 
 
-#SECRET = get_secret()
+# SECRET = get_secret()
 
 
 class DatabaseSettings(BaseSettings):
     PROJECT_DIR: Path = Path(__file__).parent.resolve()
-    model_config = SettingsConfigDict(env_file=PROJECT_DIR / ".env", extra="ignore")
+    model_config = SettingsConfigDict(env_file=(PROJECT_DIR / ".env.dev",
+                                                PROJECT_DIR / ".env",),
+                                      extra="ignore")
 
     PG_HOST: str = 'localhost'
     PG_PORT: int = 8080
-    #PG_PASSWORD: SecretStr = SECRET['PGPASSWORD']
+    # PG_PASSWORD: SecretStr = SECRET['PGPASSWORD']
     VARVAR: str = os.getenv("VARVAR", "default value")
 
     PG_DSN: PostgresDsn = 'postgres://user:pass@localhost:5432/foobar'
